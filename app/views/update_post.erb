@@ -1,0 +1,14 @@
+<h1>Edit this post</h1>
+<form method="POST" action="/posts/<%=params[:id]%>">
+  <h2>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name"
+    value= <%= @post.name %> >
+  </h2>
+
+  <h2>
+    <label for="content">Content:</label>
+    <input type="text" name="content" id="content" value= <%= @post.content %>>
+  </h2>
+  <input type="submit" value="submit">
+</form>
