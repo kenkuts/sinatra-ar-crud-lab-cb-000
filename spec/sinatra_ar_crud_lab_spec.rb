@@ -134,10 +134,4 @@ describe "Blog Post App" do
     end
 
   end
-
-
-
-
-
-
 end
