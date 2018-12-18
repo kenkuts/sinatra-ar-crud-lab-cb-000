@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  
+
   # Create new posts with a name and content
   get '/posts/new' do
     erb :new
@@ -58,9 +58,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts/:id' do
-    @post = Post.find(params[:id]).destroy
+    Post.find(params[:id]).destroy
 
-    erb :index
+    redirect to '/posts'
   end
 
 end
