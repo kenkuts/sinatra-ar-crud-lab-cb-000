@@ -1,6 +1,10 @@
 <h1>Name: <%= @post.name %></h1>
 <h2>Content: <%= @post.content %></h2>
 <form method="POST" method="/posts/<%=@post.id%>">
+<<<<<<< HEAD
   <input name="_method" type="hidden" value="delete">
   <input type="submit" value="Delete">
+=======
+  <input id="hidden" type="submit" value="delete">
+>>>>>>> 696956c98caa5b8bc7b98467533807df80885ac7
 </form>

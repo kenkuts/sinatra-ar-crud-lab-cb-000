@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+
   # Create new posts with a name and content
   get '/posts/new' do
     erb :new
@@ -46,6 +47,12 @@ class ApplicationController < Sinatra::Base
     erb :update_post
   end
 
+<<<<<<< HEAD
+=======
+  # This method updates our current post record.
+  # It finds the post with the same id and updates the name and the content
+  # simultaneously.
+>>>>>>> 696956c98caa5b8bc7b98467533807df80885ac7
   patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post.update(name: params[:name], content: params[:content])
@@ -53,8 +60,14 @@ class ApplicationController < Sinatra::Base
     erb :single_post
   end
 
+<<<<<<< HEAD
   delete '/posts/:id' do
     Post.destroy(params[:id])
+=======
+  post '/posts/:id' do
+    Post.find(params[:id]).destroy
+
+>>>>>>> 696956c98caa5b8bc7b98467533807df80885ac7
     redirect to '/posts'
   end
 
