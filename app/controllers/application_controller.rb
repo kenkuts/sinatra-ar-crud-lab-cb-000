@@ -46,11 +46,16 @@ class ApplicationController < Sinatra::Base
     erb :update_post
   end
 
-  post '/posts/:id' do
+  patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post.update(name: params[:name], content: params[:content])
 
     erb :single_post
+  end
+
+  delete '/posts/:id' do
+    Post.destroy(params[:id])
+    redirect to '/posts'
   end
 
 end
